@@ -5,9 +5,10 @@ read cp
 echo "Enter selling price:"
 read sp
 
-if [ $(echo "$sp > $cp" | bc) -eq 1 ]; then
+# bc prints 1 if the comparison is true, 0 if false
+if (( $(echo "$sp > $cp" | bc) )); then
     echo "Profit of $(echo "$sp - $cp" | bc)"
-elif [ $(echo "$sp < $cp" | bc) -eq 1 ]; then
+elif (( $(echo "$sp < $cp" | bc) )); then
     echo "Loss of $(echo "$cp - $sp" | bc)"
 else
     echo "No profit, no loss"

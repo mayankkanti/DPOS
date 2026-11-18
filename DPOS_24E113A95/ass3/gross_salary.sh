@@ -3,7 +3,8 @@
 echo "Enter basic salary:"
 read basic
 
-if [ $(echo "$basic < 1500" | bc) -eq 1 ]; then
+# bc prints 1 if the comparison is true, 0 if false
+if (( $(echo "$basic < 1500" | bc) )); then
     hra=$(echo "scale=2; $basic * 10 / 100" | bc -l)
     da=$(echo "scale=2; $basic * 90 / 100" | bc -l)
 else

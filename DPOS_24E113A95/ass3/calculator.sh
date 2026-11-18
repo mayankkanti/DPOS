@@ -2,7 +2,7 @@
 # Q12: Calculator using command line arguments
 # Usage: ./calculator.sh op1 operator op2
 # Operators: + - x / % ^
-if [ $# -ne 3 ]; then
+if (( $# != 3 )); then
     echo "Invalid input"
     echo "Enter input in following format: op1 operator op2"
     exit 1

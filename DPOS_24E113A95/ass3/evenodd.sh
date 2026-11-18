@@ -12,7 +12,7 @@ fi
 
 for n in $(cat "$1")
 do
-    if [ $((n % 2)) -eq 0 ]; then
+    if (( n % 2 == 0 )); then
         echo $n >> even_numbers
     else
         echo $n >> odd_numbers

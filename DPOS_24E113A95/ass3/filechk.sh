@@ -1,7 +1,7 @@
 #!/bin/bash
 # Q11: Check whether two files have the same content
 # Usage: ./filechk.sh file1 file2
-if [ $# -ne 2 ]; then
+if (( $# != 2 )); then
     echo "Usage: $0 file1 file2"
     exit 1
 fi
